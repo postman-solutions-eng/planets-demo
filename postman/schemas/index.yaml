@@ -3,6 +3,9 @@ info:
   version: '1.0.0'
   title: 'Spacecraft API'
   description: Buy or rent spacecrafts
+  contact:
+    email: admin@planetapi.com
+    url: https://planetapi.com
 
 paths:
   /spacecrafts/{spacecraftId}:
@@ -22,18 +25,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Spacecraft'
+              example: "test"
         404:
           description: No spacecraft found for the provided `spacecraftId`
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+              example: "test"
         500:
           description: Unexpected error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+              example: "test"
 components:
   schemas:
     SpacecraftId:
